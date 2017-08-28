@@ -5,6 +5,6 @@ let url = 'http://localhost:3000';
 export const getSliders = () =>{
     return get( url+'/sliders');
 };
-export const getCakeList =(type,offset,limit) =>{
-    return get(`${url}/cakeList/${type}/${offset}/${limit}`);
+export const getCakeLists =(type,offset,limit) =>{
+    return get(url+`/cakeList/${type}/${offset}/${limit}`);
 };

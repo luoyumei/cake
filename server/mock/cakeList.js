@@ -160,4 +160,4 @@ module.exports=[
         price: '                            \t￥198' },
     { url: 'https://www.dangao.com/proimgs/711693175228.jpg',
         info: '心形欧式水果蛋糕，各色水果、巧克力片心形',
-        price: '                            \t￥198' }]
+        price: '                            \t￥198' }];

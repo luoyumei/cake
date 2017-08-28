@@ -7,7 +7,8 @@ import Swiper from "../../conponents/Swiper/index";
 import * as action from '../../redux/actions/home';
  class Home extends Component{
      componentDidMount(){
-         this.props.getSlider()
+         this.props.getSlider();
+
      }
     render(){
         return (

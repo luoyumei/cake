@@ -28,6 +28,7 @@ app.all('*', function(req, res, next) {
     else  next();
 });
 app.listen(3000);
+
 //获取轮播图数据
 app.get('/sliders',function (req,res) {
     res.json(sliders);
@@ -37,10 +38,20 @@ app.get('/sliders',function (req,res) {
 app.get('/cakeList/:type/:offset/:limit',function (req,res) {
     let {type,offset,limit} = req.params;
     console.log(type,offset,limit);
-    res.json(cakeList);
+
+    /*最新商品——默认类型为1，返回的数据为数组从offset开始截取到offset+limit，即limit个数据
+    * 最热商品——类型为2,返回的数组倒叙排列同上
+    * 获取到的数据都是数组的一部分，如果接取的内容是[]，说明没人更多的数据了，写结构的时候需要判断*/
+    if(type===1){
+        res.json(cakeList.slice(offset,(offset+limit)));
+    }else if(type===2){
+        res.json(cakeList.reverse().slice(offset,(offset+limit)))
+    }
+
 });
 
 //商品详情
 app.get('/detail/:id',function (req,res) {
-    res.json(cakeList[1])
+    let {id} = req.params;
+    res.json(cakeList[id])
 });
