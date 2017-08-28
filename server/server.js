@@ -43,4 +43,4 @@ app.get('/cakeList/:type/:offset/:limit',function (req,res) {
 //商品详情
 app.get('/detail/:id',function (req,res) {
     res.json(cakeList[1])
-})
+});

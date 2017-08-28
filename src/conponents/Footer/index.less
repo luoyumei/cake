@@ -1,0 +1,37 @@
+.footer{
+  position: fixed;
+  bottom: 0;
+  left:0;
+  width: 100%;
+  height: 1rem;
+  background: #fff;
+  border-top: 1px silver solid;
+  .top,.but{
+    display: flex;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .top{
+    z-index: 99;
+  }
+  a {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    i {
+      font-size: .6rem;
+    }
+  }
+  .but a{
+    color:coral;
+  }
+  .selected{
+    color: transparent;
+    background: none;
+  }
+}

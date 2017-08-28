@@ -5,11 +5,22 @@
     <title>my cake</title>
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_348743_206aoqncziw6zuxr.css
+
+">
 </head>
 <body>
 <div id="app"></div>
 <script type="text/javascript">
-
+    function refreshRem() {
+        let desW=750,
+            winW=document.documentElement.clientWidth,
+            ratio=winW/desW;
+        document.documentElement.style.fontSize=ratio*100+"px";
+    }
+    refreshRem();
+    /*监听浏览器的窗口大小,大小变化的时候自动计算根目录*/
+    window.addEventListener("resize",refreshRem);
 </script>
 </body>
 </html>

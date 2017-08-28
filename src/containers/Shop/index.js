@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
 import {getSliders,getCakeList} from "../../api/home";
-export default class Lesson extends Component{
-    constructor(){
+import Header from "../../conponents/Header/index";
+export default class Shop extends Component{
+    /*constructor(){
         super();
         this.state={sliders:[],list:[]}
     }
@@ -12,11 +13,12 @@ export default class Lesson extends Component{
           getCakeList(0,2,2).then(list=>{
               this.setState({list})
           })
-    }
+    }*/
     render(){
         return (
             <div>
-               1111
+                <Header title="购物车"/>
+                Shop
             </div>
         )
     }

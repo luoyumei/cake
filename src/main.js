@@ -6,13 +6,20 @@ import {
     Switch
 } from 'react-router-dom';
 import Home from "./containers/Home/index";
-import Lesson from "./containers/Lesson/index";
+import Shop from "./containers/Shop/index";
 import Profile from "./containers/Profile/index";
+import Warp from "./containers/Warp";
+import './common/index.less'
+import Detail from "./containers/Detail/Detail";
 ReactDom.render(
 <Router>
-    <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/lesson" component={Lesson}/>
-        <Route path="/profile" component={Profile}/>
-    </Switch>
+    <Warp>
+        <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route path="/shop" component={Shop}/>
+            <Route path="/profile" component={Profile}/>
+            <Route path="/profile" component={Profile}/>
+            <Route path="/detail" component={Detail}/>
+        </Switch>
+    </Warp>
 </Router>,document.querySelector('#app'));
