@@ -17,9 +17,11 @@ import * as action from '../../redux/actions/home';
                     <Header title=''/>
                     <input type="text" placeholder="搜索"/>
                 </div>
-                <ScrollList>
-                   <Swiper data={this.props.home.sliders}/>
-                </ScrollList>
+                <div className="content">
+                    <ScrollList>
+                        <Swiper data={this.props.home.sliders}/>
+                    </ScrollList>
+                </div>
             </div>
         )
     }
