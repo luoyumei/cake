@@ -11,15 +11,19 @@ import Profile from "./containers/Profile/index";
 import Warp from "./containers/Warp";
 import './common/index.less'
 import Detail from "./containers/Detail/Detail";
+import store from './redux/store';
+import {Provider} from 'react-redux';
 ReactDom.render(
-<Router>
-    <Warp>
-        <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route path="/shop" component={Shop}/>
-            <Route path="/profile" component={Profile}/>
-            <Route path="/profile" component={Profile}/>
-            <Route path="/detail" component={Detail}/>
-        </Switch>
-    </Warp>
-</Router>,document.querySelector('#app'));
+    <Provider store={store}>
+        <Router>
+            <Warp>
+                <Switch>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/shop" component={Shop}/>
+                    <Route path="/profile" component={Profile}/>
+                    <Route path="/detail" component={Detail}/>
+                </Switch>
+            </Warp>
+        </Router>
+    </Provider>
+,document.querySelector('#app'));
