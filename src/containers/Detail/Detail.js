@@ -1,17 +1,15 @@
 import React from 'react';
-import Header from "../../conponents/Header/index";
+
 import {Link} from 'react-router-dom'
 import './index.less'
 import ScrollList from "../../conponents/ScrollList/index";
+import MHeader from "../../conponents/MHeader/index";
 export default class Detail extends React.Component {
     render() {
         return (
             <div className="detail">
                 <div className="d-header">
-                    <Header title="商品详情"></Header>
-                    <Link to="/">
-                        <i className="iconfont icon-fanhui"></i>
-                    </Link>
+                    <MHeader title="商品详情"></MHeader>
                 </div>
                 <ScrollList>1111</ScrollList>
                 <div className="d-footer">

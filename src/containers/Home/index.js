@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import ScrollList from "../../conponents/ScrollList/index";
 import Swiper from "../../conponents/Swiper/index";
 import * as action from '../../redux/actions/home';
+
  class Home extends Component{
      componentDidMount(){
          this.props.getSlider();
