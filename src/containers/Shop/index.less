@@ -1,0 +1,100 @@
+.shop-all {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-size: .3rem;
+  input{
+    height: .35rem;
+    width: .35rem;
+    display: block;
+  }
+  .shop-content {
+    width: 100%;
+    .shop-list {
+      ul {
+        width: 100%;
+        height: 1.3rem;
+        margin-top: .2rem;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        li:nth-child(1) {
+          flex: 1;
+          margin-left: .5rem;
+        }
+        li:nth-child(2) {
+          display: flex;
+          flex: 5;
+          img {
+            display: block;
+            width: 1.6rem;
+            height: 1.2rem;
+          }
+          .info{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            p {
+
+              margin-left: .2rem;
+            }
+            .aaa{
+              color: red;
+            }
+          }
+        }
+        li:nth-child(3) {
+          flex: 2.5;
+          button {
+            width: .5rem;
+            height: .5rem;
+            background: none;
+            border:0.01rem solid silver ;
+          }
+        }
+      }
+
+    }
+  }
+  .shop-bottom{
+    width: 100%;
+    margin-top: 0;
+    border-top: .01rem solid silver;
+    position: fixed;
+    bottom: 1rem;
+    left: 0;
+    height: 1.2rem;
+    display: flex;
+    align-items: center;
+    li:nth-child(1){
+      margin-left: .5rem;
+      display: flex;
+      justify-content: space-between;
+      flex: 1.3;
+    }
+    li:nth-child(2){
+      display: flex;
+      flex: 4;
+      justify-content: flex-end;
+      span:nth-child(2){
+        display: inline-block;
+        width: .6rem;
+      }
+    }
+    li:nth-child(3){
+      flex: 2;
+    }
+    .total{
+      display: block;
+      width: 1.3rem;
+      height: .6rem;
+      margin: 0 auto;
+      background: #faa990;
+      border-radius: .1rem;
+      color: white;
+      border: none;
+      font-size: .3rem;
+    }
+  }
+}
+

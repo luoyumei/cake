@@ -1,6 +1,7 @@
 let cakeList=require('./mock/cakeList');
-cakeList.forEach((item)=>{item.price=item.price.slice(29)});
 let sliders=require('./mock/sliders');
+let cakeList1=cakeList.slice(0,11);
+let cakeList2=cakeList.slice(11,23);
 let express = require('express');
 let app = express();
 let bodyParser=require('body-parser');
@@ -40,10 +41,10 @@ app.get('/cakeList/:type/:offset/:limit',function (req,res) {
     /*最新商品——默认类型为1，返回的数据为数组从offset开始截取到offset+limit，即limit个数据
     * 最热商品——类型为2,返回的数组倒叙排列同上
     * 获取到的数据都是数组的一部分，如果接取的内容是[]，说明没人更多的数据了，写结构的时候需要判断*/
-    if(type===1){
-        res.json(cakeList.slice(offset,(offset+limit)));
-    }else if(type===2){
-        res.json(cakeList.reverse().slice(offset,(offset+limit)))
+    if(type==1){
+        res.json(cakeList1.slice(offset,(offset+limit)));
+    }else if(type==2){
+        res.json(cakeList2.slice(offset,(offset+limit)))
     }
 });
 
@@ -73,7 +74,7 @@ app.post('/reg',function (req,res) {
     })
 });
 
-//验证用户是否登录
+//个人中心，验证用户是否登录
 app.get('/auth',function (req,res) {
     if(req.session.user){
         res.json(req.session.user)
@@ -82,8 +83,9 @@ app.get('/auth',function (req,res) {
     }
 });
 
-//
-app.post('./login',function (req,res) {
+
+//登录
+app.post('/login',function (req,res) {
     req.body.password=md5(req.body.password);
     User.findOne(req.body).then(data=>{
         if(data){

@@ -1,10 +1,15 @@
 import React from 'react';
-import './index.less'
-export default class MHeader extends React.Component {
+import './index.less';
+import {withRouter} from 'react-router-dom';
+ class MHeader extends React.Component {
+    go=()=>{
+      this.props.history.goBack()
+    };
     render() {
         return (
             <div className="m-header">
-                <i className="iconfont icon-fanhui"></i>
+                <i onClick={this.go}
+                   className="iconfont icon-fanhui"></i>
                 <p>
                  {this.props.title}
                 </p>
@@ -12,3 +17,4 @@ export default class MHeader extends React.Component {
         )
     }
 }
+export default withRouter(MHeader)

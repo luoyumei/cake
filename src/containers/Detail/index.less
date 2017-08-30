@@ -1,17 +1,70 @@
 .detail{
+  .d-header i{
+    position: absolute;
+    margin-left: .3rem;
+    line-height: 1rem;
+    color: white;
+  }
+  .content{
+    img{
+      width: 100%;
+      height: 3.8rem;
+    }
+    .info{
+      margin: .3rem .6rem 0 .6rem;
+      font-size: .33rem;
+      line-height: .5rem;
+    }
+    .price{
+      margin-top: .2rem;
+      margin-left: .7rem;
+      color: red;
+      font-size: .4rem;
+    }
+    .product{
+      margin-top: .5rem;
+      margin-left: .5rem;
+      font-size: .3rem;
+      color: #6b6b6b;
+    }
+  }
+  .detail-content{
+    margin-top: .3rem;
+    margin-left: .4rem;
+    margin-right: .4rem;
+    text-align: center;
+    border-top: .01rem solid silver;
+    display: flex;
+    justify-content: space-between;
+   p{
+      margin-top: .2rem;
+      font-size: .3rem;
+    }
+  }
   .d-footer{
+    background: whitesmoke;
     position: fixed;
     left: 0;
     bottom: 0;
     z-index: 999;
     width: 90%;
-    height: 1.1rem;
-    background: white;
+    height: 1.3rem;
     display: flex;
     justify-content: space-around;
     padding: 0 5%;
-    button{
+    align-items: center;
+
+    .car{
       width: 40%;
+      border: none;
+      height: .9rem;
+      border-radius: .1rem;
+      color: white;
+      font-size: .4rem;
+
+    }
+    .buy{
+      width: 2.7rem;
       border: none;
       height: .9rem;
       border-radius: .1rem;
@@ -26,3 +79,10 @@
     }
   }
 }
+.long{
+  padding-top: 10rem;
+  height:1rem;
+  font-size: .4rem;
+  text-align: center;
+}
+

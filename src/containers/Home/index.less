@@ -13,7 +13,50 @@
       border:none;
       padding: 0 3%;
       font-size: .3rem;
-      opacity: .96;
+      opacity: .8;
     }
   }
+  .product{
+    .product-type{
+      width: 60%;
+      height: .8rem;
+      line-height: .8rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: .3rem;
+      .select{
+        color: red;
+        border-bottom: .03rem solid red;
+      }
+    }
+    .cake-list{
+      border-top:1px solid #e1e1e1;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 .2rem;
+      a{
+        width: 50%;
+      }
+      .cake-list-item{
+        padding: .2rem;
+        box-sizing: border-box;
+        img{
+          display: inline-block;
+          width: 100%;
+          height: 1.7rem;
+        }
+        .info{
+          height: .6rem;
+          font-size: .25rem;
+        }
+        .price{
+          color: red;
+          font-size: .25rem;
+          text-align: right;
+        }
+      }
+    }
+  }
+
 }

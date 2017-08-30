@@ -7,5 +7,15 @@ export const getSlider=()=>(dispatch)=>{
             sliders
         })
     })
-}
+};
 
+export const getCakeList=()=>(dispatch,getState)=>{
+    let {cake:{curType,offset,limit}}=getState().home;
+    getCakeLists(curType,offset,limit).then(cakeList=>{
+        dispatch({
+            type:types.GET_CAKE_LIST,
+            cakeList,
+            curType
+        })
+    })
+}
