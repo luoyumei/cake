@@ -35,8 +35,8 @@
             flex-direction: column;
             justify-content: space-between;
             p {
-
               margin-left: .2rem;
+
             }
             .aaa{
               color: red;
@@ -51,9 +51,15 @@
             background: none;
             border:0.01rem solid silver ;
           }
+          .num{
+            display: inline-block;
+            text-align: center;
+            width: .48rem;
+            height: .48rem;
+            border:0.01rem solid silver ;
+          }
         }
       }
-
     }
   }
   .shop-bottom{
@@ -76,9 +82,11 @@
       display: flex;
       flex: 4;
       justify-content: flex-end;
-      span:nth-child(2){
+      .price{
         display: inline-block;
         width: .6rem;
+        border: none;
+        text-align: center;
       }
     }
     li:nth-child(3){
@@ -97,4 +105,22 @@
     }
   }
 }
+.no{
+text-align: center;
+  .p1{
+    font-size: .4rem;
+    margin-top: 3rem;
 
+  }
+  .p2{
+    font-size: .3rem;
+    line-height: .8rem;
+    color: #9b9b9b;
+  }
+  button{
+   padding: .15rem .2rem;
+    border: .03rem solid #faa990;
+    background: none;
+    font-size: .3rem;
+  }
+}

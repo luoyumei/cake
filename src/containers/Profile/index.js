@@ -14,8 +14,9 @@ import util from '../../common/util'
      handleClick=()=>{
          sessionStorage.clear();
          this.props.user.userInfo.username='';
-         this.forceUpdate()
-    };
+         this.forceUpdate();
+        this.props.shop=[];
+     };
     render() {
         return (
             <div className="user-all">
@@ -48,7 +49,7 @@ import util from '../../common/util'
 
                 {this.props.user.userInfo.username?
                     <div className="user-button">
-                         <button onClick={this.handleClick}>退出当前账户</button>
+                         <button onClick={()=>this.props.del()}>退出当前账户</button>
                     </div>:null}
             </div>
         )

@@ -11,6 +11,7 @@ export const getSlider=()=>(dispatch)=>{
 
 export const getCakeList=()=>(dispatch,getState)=>{
     let {cake:{curType,offset,limit}}=getState().home;
+    dispatch({type:types.SET_LOADING_STATUS});
     getCakeLists(curType,offset,limit).then(cakeList=>{
         dispatch({
             type:types.GET_CAKE_LIST,

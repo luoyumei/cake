@@ -5,6 +5,7 @@ let initState={
         curType:1,
         offset:0,
         limit:6,
+        isLoading:false,
         cakeList:[]
     }
 };
@@ -21,7 +22,16 @@ export default function (state=initState,action){
                     ...state.cake,
                     curType:action.curType,
                     offset:state.cake.offset+6,
-                    cakeList:[...state.cake.cakeList,...action.cakeList]
+                    cakeList:[...state.cake.cakeList,...action.cakeList],
+                    isLoading:false
+                }
+            };
+        case types.SET_LOADING_STATUS:
+            return {
+                ...state,
+                lesson:{
+                    ...state.lesson,
+                    isLoading:true
                 }
             };
         default:

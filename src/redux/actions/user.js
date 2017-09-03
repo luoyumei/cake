@@ -14,11 +14,11 @@ export const reg=(userInfo)=>(dispatch)=>{
             dispatch({
                 type:types.SET_USER_INFO,
                 userInfo:data
-            })
+            });
+            dispatch(push('/profile'))
         }
     })
 };
-
 export const auth=()=>(dispatch)=>{
     auths().then(data=>{
         if(data.username){
@@ -48,4 +48,11 @@ export const login=(userInfo)=>(dispatch)=>{
           dispatch(push('/profile'))
         }
     })
+};
+
+export const del=()=> {
+    sessionStorage.clear();
+    return{
+        type:types.DEL,
+    }
 };

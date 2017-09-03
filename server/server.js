@@ -12,7 +12,7 @@ let session=require('express-session');
 let mongoStore=require('connect-mongo')(session);
 app.use(session({
     resave:true,
-    saveUninitialized:true,//是否保存初始化的
+    //saveUninitialized:true,//是否保存初始化的
     secret:'zfpx',//加密
     store:new mongoStore({
         url:'mongodb://localhost:27017/cake'

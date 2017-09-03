@@ -3,7 +3,7 @@ import './index.less';
 import {withRouter} from 'react-router-dom';
  class MHeader extends React.Component {
     go=()=>{
-      this.props.history.goBack()
+      this.props.history.push('/')
     };
     render() {
         return (

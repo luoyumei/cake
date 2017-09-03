@@ -19,7 +19,13 @@ export default function (state=initState,action) {
                 userInfo:action.userInfo,
                 err:''
             };
-
+        case types.DEL:
+            return {
+                userInfo:{
+                    username:'',
+                    password:''
+                }
+            }
     }
     return state;
 }

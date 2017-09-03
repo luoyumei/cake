@@ -6,12 +6,20 @@ import {Link} from 'react-router-dom';
 import ScrollList from "../../conponents/ScrollList/index";
 import Swiper from "../../conponents/Swiper/index";
 import * as action from '../../redux/actions/home';
+import util from '../../common/util';
 class Home extends Component{
     componentDidMount(){
-        if(this.props.home.cake.cakeList.length<=0){
+        if(this.props.home.cake.cakeList.length==0){
             this.props.getCakeList();
         }
         this.props.getSlider();
+        if(this.props.home.cake.cakeList.length>0){
+            this.refs.scroll.scrollTop=util.get('homeLocation');
+            this.forceUpdate();
+        }
+    }
+    componentWillUnmount(){
+        util.set('homeLocation',this.refs.scroll.scrollTop);
     }
     changeType=(e)=>{
         let  cur=e.target.getAttribute('type');
@@ -32,15 +40,19 @@ class Home extends Component{
         this.props.getCakeList();
     };
     render(){
-        let {cakeList,curType}=this.props.home.cake;
+        let {cakeList,curType,isLoading}=this.props.home.cake;
         return (
             <div className="home">
                 <div className="s-header">
                     <Header/>
                     <input type="text" placeholder="搜索"/>
                 </div>
-                <div className="content">
-                    <ScrollList>
+                <div className="content" ref="scroll">
+                    <ScrollList
+                        element={this.refs.scroll}
+                        isLoading={isLoading}
+                        loadMore={this.loadMore}
+                        cakeList={this.cakeList}>
                         <Swiper data={this.props.home.sliders}/>
                         <div className="product">
                             <div className="product-type" onClick={this.changeType}>
@@ -61,11 +73,9 @@ class Home extends Component{
                                     </Link>
                                 )):<div>正在加载</div>}
                             </ul>
-                            <div onClick={this.loadMore}>获取更多</div>
                         </div>
                     </ScrollList>
                 </div>
-                <p className="font"><i className="iconfont icon-iconfontfanhuidingbu"></i></p>
             </div>
         )
     }
