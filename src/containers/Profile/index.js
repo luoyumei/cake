@@ -14,8 +14,8 @@ import util from '../../common/util'
      handleClick=()=>{
          sessionStorage.clear();
          this.props.user.userInfo.username='';
+         this.props.shop=[];
          this.forceUpdate();
-        this.props.shop=[];
      };
     render() {
         return (

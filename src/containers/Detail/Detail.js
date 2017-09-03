@@ -16,12 +16,18 @@ import * as action from '../../redux/actions/shop'
          let obj=this.props.location.state;
          obj.selected=false;
          obj.num=1;
-         this.props.buy(obj)
+         let ary=this.props.shop;
+         if(ary.length>0){
+             if(ary.filter(item=>item.url==obj.url).length>0){
+                // console.log(ary.find(item => item.url !== obj.url));
+                 return;
+             }else {
+                 this.props.buy(obj);//redux中action触发的方法
+             }
+         }else{
+             this.props.buy(obj);//redux中action触发的方法
+         }
      };
-    /*addToCar=()=>{
-        let url,info,price=this.props.location.state;
-        console.log(this.props.location.state);
-    };*/
     render() {
        let obj=this.props.location.state;
         let {url,info,price}=this.props.location.state||{};
@@ -41,7 +47,6 @@ import * as action from '../../redux/actions/shop'
                         <div className="detail-content">
                             <p>运费:免运费</p>
                             <p>库存:999</p>
-
                         </div>
                         <p className="product">产品介绍:</p>
                         <div className="long">浏览更多</div>
@@ -49,7 +54,7 @@ import * as action from '../../redux/actions/shop'
                 </ScrollList>
                 <div className="d-footer">
                     <button className="car">加入购物车</button>
-                        <Link to={{pathname:'/shop',state:obj}} >
+                        <Link to='/shop' >
                             <button className="buy" onClick={this.goToBuy}>立即购买</button>
                         </Link>
                 </div>

@@ -38,7 +38,7 @@ import ScrollList from "../../conponents/ScrollList/index";
              }else if(this.state.ary.length===0){
                  this.setState({price:0});
              }
-         },1)
+         },100)
      };
     render(){
         let obj=this.props.shop;

@@ -12,11 +12,11 @@ export default class ScrollList extends React.Component {
                 this.timer=setTimeout(()=>{
                     let {scrollTop,offsetHeight,scrollHeight}=nextProps.element;
                     this.setState({top:scrollTop});
-                    if(scrollTop+offsetHeight+20>scrollHeight && this.props.cakeList!=[] && !this.props.isLoading){
+                    if(scrollTop+offsetHeight+5>scrollHeight && this.props.cakeList!=[] && !this.props.isLoading){
                         this.props.loadMore();
                     }
-                },50)
-            })
+                },100)
+            });
             this.setState({flag:true})
         }
     }

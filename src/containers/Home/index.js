@@ -60,14 +60,11 @@ class Home extends Component{
                                 <span type="2" className={curType==2?'select':''}>最热商品</span>
                             </div>
                             <ul className="cake-list" >
-
                                 {cakeList.length>0?cakeList.map((item,index)=>(
                                     <Link  key={index} to={{pathname:'/detail',state:item}}>
                                         <li className="cake-list-item">
                                             <img src={item.url}/>
-                                            <p className="info">{item.info
-
-                                            }</p>
+                                            <p className="info">{item.info}</p>
                                             <p className="price">{item.price}</p>
                                         </li>
                                     </Link>
@@ -75,6 +72,10 @@ class Home extends Component{
                             </ul>
                         </div>
                     </ScrollList>
+                    {this.props.home.cake.cakeList.length>this.props.home.cake.limit?
+                        <p className="bottom">没有更多啦!!!</p>:
+                        <p className="bottom">加载更多...</p>
+                    }
                 </div>
             </div>
         )
